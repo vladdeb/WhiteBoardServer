@@ -1,9 +1,0 @@
-C:/Users/Lenovo/Desktop/BSUIR/!sem4/Course/WhiteBoardServer/build/Desktop_Qt_6_9_3_MinGW_64_bit-Debug/CMakeFiles/WhiteBoardServer.dir
-C:/Users/Lenovo/Desktop/BSUIR/!sem4/Course/WhiteBoardServer/build/Desktop_Qt_6_9_3_MinGW_64_bit-Debug/CMakeFiles/edit_cache.dir
-C:/Users/Lenovo/Desktop/BSUIR/!sem4/Course/WhiteBoardServer/build/Desktop_Qt_6_9_3_MinGW_64_bit-Debug/CMakeFiles/rebuild_cache.dir
-C:/Users/Lenovo/Desktop/BSUIR/!sem4/Course/WhiteBoardServer/build/Desktop_Qt_6_9_3_MinGW_64_bit-Debug/CMakeFiles/list_install_components.dir
-C:/Users/Lenovo/Desktop/BSUIR/!sem4/Course/WhiteBoardServer/build/Desktop_Qt_6_9_3_MinGW_64_bit-Debug/CMakeFiles/install.dir
-C:/Users/Lenovo/Desktop/BSUIR/!sem4/Course/WhiteBoardServer/build/Desktop_Qt_6_9_3_MinGW_64_bit-Debug/CMakeFiles/install/local.dir
-C:/Users/Lenovo/Desktop/BSUIR/!sem4/Course/WhiteBoardServer/build/Desktop_Qt_6_9_3_MinGW_64_bit-Debug/CMakeFiles/install/strip.dir
-C:/Users/Lenovo/Desktop/BSUIR/!sem4/Course/WhiteBoardServer/build/Desktop_Qt_6_9_3_MinGW_64_bit-Debug/CMakeFiles/WhiteBoardServer_autogen_timestamp_deps.dir
-C:/Users/Lenovo/Desktop/BSUIR/!sem4/Course/WhiteBoardServer/build/Desktop_Qt_6_9_3_MinGW_64_bit-Debug/CMakeFiles/WhiteBoardServer_autogen.dir
