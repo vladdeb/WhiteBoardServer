@@ -1,14 +1,23 @@
 #include "server.h"
 
 #include <QCoreApplication>
+#include <QString>
 
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
 
-    Server server;
-    server.start(5173);
+    if(argc != 2) {
+        qDebug() << "Usage: " << argv[0] << " <port>";
+        return 1;
+    }
 
+    Server server;
+    QString port_str(argv[1]);
+    int port = port_str.toInt();
+    if(!server.start(port)) {
+        return 1;
+    }
     // Set up code that uses the Qt event loop here.
     // Call a.quit() or a.exit() to quit the application.
     // A not very useful example would be including

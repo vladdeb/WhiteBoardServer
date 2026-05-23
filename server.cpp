@@ -49,16 +49,22 @@ QByteArray Server::packJson(const QJsonObject &obj) {
     return packet;
 }
 
+std::string JsonToStd(QJsonObject obj) {
+    return QJsonDocument(obj).toJson().toStdString();
+}
+
 void Server::proceedRequest(const QByteArray &data, QTcpSocket *clientSocket) {
     QJsonParseError error;
     QJsonDocument doc = QJsonDocument::fromJson(data, &error);
     QJsonObject json = doc.object();
     QString type = json["type"].toString();
+    qDebug().noquote() << doc.toJson().toStdString();
     if(type == "host") {
         quint32 id = generateKey();
         if(id == 1e9 + 1) {
             QJsonObject toSend;
             toSend["type"] = "host_failed";
+            qDebug() << "Host failed";
             clientSocket->write(packJson(toSend));
             return;
         }
@@ -66,19 +72,26 @@ void Server::proceedRequest(const QByteArray &data, QTcpSocket *clientSocket) {
         toSend["type"] = "host_success";
         toSend["id"] = static_cast<int>(id);
         auto newData = packJson(toSend);
+        qDebug() << "Host success";
         clientSocket->write(newData);
         redactors[id] = {clientSocket};
         current[id] = json["current"].toInt();
+        boards[id] = {};
         for(auto figure: json["figures"].toArray()) {
+            //qDebug() << "Received:" << JsonToStd(figure.toObject());
             boards[id].push_back(figure.toObject());
         }
         ids[clientSocket] = id;
         return;
     }
     quint32 id = json["id"].toInt(0);
+    for(auto redactor: redactors[id]) {
+        qDebug() << "Redacto: " << redactor;
+    }
     if(type == "connect") {
         if(boards.find(id) == boards.end()) {
             QJsonObject toSend;
+            qDebug() << "Connection failed";
             toSend["type"] = "connection_failed";
             clientSocket->write(packJson(toSend));
             return;
@@ -90,10 +103,15 @@ void Server::proceedRequest(const QByteArray &data, QTcpSocket *clientSocket) {
         QJsonObject toSend;
         toSend["type"] = "connection_success";
         toSend["figures"] = arr;
+        toSend["id"] = static_cast<int>(id);
         toSend["current"] = static_cast<int>(current[id]);
+        qDebug() << "Connect success";
         clientSocket->write(packJson(toSend));
         redactors[id].insert(clientSocket);
         ids[clientSocket] = id;
+        return;
+    }
+    if(!id || boards.find(id) == boards.end()) {
         return;
     }
     if(type == "draw") {
@@ -107,11 +125,15 @@ void Server::proceedRequest(const QByteArray &data, QTcpSocket *clientSocket) {
     if(type == "redo") {
         if(current[id] < boards[id].size()) current[id]++;
     }
-    QByteArray newData;
-    QDataStream out(&newData, QIODevice::WriteOnly);
-    newData.append(data);
+    if(type == "clear") {
+        boards[id].clear();
+        current[id] = 0;
+    }
     for(auto redactor: redactors[id]) {
-        redactor->write(newData);
+        if (redactor != clientSocket) {
+            qDebug() << "sended";
+            redactor->write(packJson(json));
+        }
     }
 }
 
@@ -123,6 +145,7 @@ void Server::onNewConnection() {
 
     connect(clientSocket, &QTcpSocket::readyRead, this, &Server::onReadyRead);
     connect(clientSocket, &QTcpSocket::disconnected, this, &Server::onClientDisconnected);
+    qDebug() << "New connection";
 }
 
 void Server::onReadyRead() {
@@ -132,6 +155,7 @@ void Server::onReadyRead() {
     qint32 expected = clientSocket->property("expected").toInt();
 
     buffer.append(clientSocket->readAll());
+    //qDebug() << "Ready read: " << expected;
     while(true) {
         if(expected == -1) {
             if(buffer.size() < sizeof(qint32)) {
@@ -145,6 +169,7 @@ void Server::onReadyRead() {
             break;
         }
 
+        //qDebug() << "Ready buffer: " << expected;
         QByteArray data = buffer.left(expected);
         proceedRequest(data, clientSocket);
         buffer.remove(0, expected);
