@@ -1,0 +1,27 @@
+# ninja log v6
+53	212	8011376702295309	WhiteBoardServer_autogen/timestamp	59c6ad6171bc3bec
+1410	1512	8011376715860782	WhiteBoardServer.exe	f916ea7e23c74dbc
+53	212	8011376702295309	WhiteBoardServer_autogen/mocs_compilation.cpp	59c6ad6171bc3bec
+267	354	8011374703870764	CMakeFiles/WhiteBoardServer.dir/WhiteBoardServer_autogen/mocs_compilation.cpp.obj	d285a4c0b1297e29
+53	212	8011376702295309	C:/Users/Lenovo/Desktop/BSUIR/!sem4/Course/WhiteBoardServer/build/Desktop_Qt_6_9_3_MinGW_64_bit-Debug/WhiteBoardServer_autogen/timestamp	59c6ad6171bc3bec
+272	1469	8011374703918619	CMakeFiles/WhiteBoardServer.dir/main.cpp.obj	953264c36c2492a2
+53	212	8011376702295309	C:/Users/Lenovo/Desktop/BSUIR/!sem4/Course/WhiteBoardServer/build/Desktop_Qt_6_9_3_MinGW_64_bit-Debug/WhiteBoardServer_autogen/mocs_compilation.cpp	59c6ad6171bc3bec
+213	1409	8011376703895281	CMakeFiles/WhiteBoardServer.dir/server.cpp.obj	a89082305ae28860
+42	742	8011403838199348	WhiteBoardServer_autogen/timestamp	59c6ad6171bc3bec
+42	742	8011403838199348	WhiteBoardServer_autogen/mocs_compilation.cpp	59c6ad6171bc3bec
+42	742	8011403838199348	C:/Users/Lenovo/Desktop/BSUIR/!sem4/Course/WhiteBoardServer/build/Desktop_Qt_6_9_3_MinGW_64_bit-Debug/WhiteBoardServer_autogen/timestamp	59c6ad6171bc3bec
+42	742	8011403838199348	C:/Users/Lenovo/Desktop/BSUIR/!sem4/Course/WhiteBoardServer/build/Desktop_Qt_6_9_3_MinGW_64_bit-Debug/WhiteBoardServer_autogen/mocs_compilation.cpp	59c6ad6171bc3bec
+747	2042	8011403838980376	CMakeFiles/WhiteBoardServer.dir/main.cpp.obj	1f949ef07259fe12
+744	2615	8011403838950364	CMakeFiles/WhiteBoardServer.dir/WhiteBoardServer_autogen/mocs_compilation.cpp.obj	1a64805b238ad320
+84	817	8011690308849137	WhiteBoardServer_autogen/timestamp	59c6ad6171bc3bec
+84	817	8011690308849137	WhiteBoardServer_autogen/mocs_compilation.cpp	59c6ad6171bc3bec
+84	817	8011690308849137	C:/Users/Lenovo/Desktop/BSUIR/!sem4/Course/WhiteBoardServer/build/Desktop_Qt_6_9_3_MinGW_64_bit-Debug/WhiteBoardServer_autogen/timestamp	59c6ad6171bc3bec
+84	817	8011690308849137	C:/Users/Lenovo/Desktop/BSUIR/!sem4/Course/WhiteBoardServer/build/Desktop_Qt_6_9_3_MinGW_64_bit-Debug/WhiteBoardServer_autogen/mocs_compilation.cpp	59c6ad6171bc3bec
+824	3400	8011690309988223	CMakeFiles/WhiteBoardServer.dir/main.cpp.obj	1f949ef07259fe12
+819	3403	8011690309939242	CMakeFiles/WhiteBoardServer.dir/WhiteBoardServer_autogen/mocs_compilation.cpp.obj	1a64805b238ad320
+39	233	8011690415190486	WhiteBoardServer_autogen/timestamp	59c6ad6171bc3bec
+39	233	8011690415190486	WhiteBoardServer_autogen/mocs_compilation.cpp	59c6ad6171bc3bec
+39	233	8011690415190486	C:/Users/Lenovo/Desktop/BSUIR/!sem4/Course/WhiteBoardServer/build/Desktop_Qt_6_9_3_MinGW_64_bit-Debug/WhiteBoardServer_autogen/timestamp	59c6ad6171bc3bec
+39	233	8011690415190486	C:/Users/Lenovo/Desktop/BSUIR/!sem4/Course/WhiteBoardServer/build/Desktop_Qt_6_9_3_MinGW_64_bit-Debug/WhiteBoardServer_autogen/mocs_compilation.cpp	59c6ad6171bc3bec
+234	3039	8011690417138822	CMakeFiles/WhiteBoardServer.dir/server.cpp.obj	105d82070d14e88
+3040	4035	8011690445200536	WhiteBoardServer.exe	68fa2411903d68c0
